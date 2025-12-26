@@ -1,4 +1,4 @@
-# UdemyAngular
+# angular-role-based-auth
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.0.3.
 
@@ -6,22 +6,62 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# angular-role-based-auth
+This project demonstrates a secure Angular application implementing authentication and role-based access control (RBAC) for multiple user roles — Admin and Customer
 
-## Build
+# Key Features
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+# User Authentication
 
-## Running unit tests
+Secure login flow using HTTP-based authentication
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Session handling with token-based authorization
 
-## Running end-to-end tests
+# Role-Based Access Control
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+Distinct roles: Admin and Customer
 
-## Further help
+Protected routes using Angular Route Guards
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Role validation to restrict unauthorized access
+
+# Authorization Guards
+
+AuthGuard to verify authenticated users
+
+RoleGuard to control access based on user roles
+
+# REST API Integration
+
+HTTP client integration for login and user data
+
+Centralized service layer for API communication
+
+# Scalable Architecture
+
+Clean separation of components, services, and guards
+
+Easily extendable for additional roles and permissions
+
+# Best Practices
+
+Angular Reactive Forms for login validation
+
+Interceptors for handling authorization headers
+
+Reusable and maintainable code structure
+
+# Tech Stack
+
+Angular
+
+TypeScript
+
+Angular Router
+
+RxJS
+
+REST APIs
+
+JSON Server / Mock Backend
