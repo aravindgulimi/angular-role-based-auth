@@ -1,0 +1,111 @@
+:host {
+    display: block;
+    height: 100vh;
+    width: 100vw;
+    font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial
+}
+
+.login-shell {
+    display: flex;
+    height: 100vh
+}
+
+.hero {
+    flex: 1;
+    position: relative;
+    overflow: hidden
+}
+
+.hero-image {
+    position: absolute;
+    inset: 0;
+    background-image: url('/assets/gas-pump.jpg');
+    background-size: cover;
+    background-position: center
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(9, 115, 92, 0.0) 0%, rgba(9, 115, 92, 0.18) 60%, rgba(9, 115, 92, 0.6) 100%)
+}
+
+.login-card {
+    width: 420px;
+    padding: 36px 28px;
+    background: linear-gradient(180deg, #ffffff 0%, #e9f7f0 100%);
+    border-radius: 18px;
+    margin: 40px;
+    border-radius: 18px;
+    margin-left: auto;
+    margin-right: 72px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08)
+}
+
+.card-inner {
+    padding: 8px 6px
+}
+
+.kicker {
+    color: #088069;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: 8px
+}
+
+h1 {
+    font-size: 28px;
+    margin: 0 0 18px 0;
+    color: #0b3b31
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 12px
+}
+
+label {
+    font-weight: 600;
+    color: #183f36
+}
+
+input {
+    padding: 16px;
+    border-radius: 10px;
+    border: 1px solid #e5e5e5;
+    background: #f7f7f7;
+    font-size: 15px
+}
+
+.forgot {
+    text-align: right;
+    margin-top: 4px
+}
+
+.forgot a {
+    color: #0b7c58;
+    cursor: pointer
+}
+
+.btn-login {
+    margin-top: 10px;
+    padding: 14px;
+    border-radius: 10px;
+    background: #0b7c58;
+    color: #fff;
+    border: none;
+    font-weight: 700;
+    font-size: 16px
+}
+
+@media(max-width:900px) {
+    .login-shell {
+        flex-direction: column
+    }
+
+    .login-card {
+        width: calc(100% - 48px);
+        margin: 28px auto
+    }
+}

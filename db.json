@@ -1,0 +1,6 @@
+{
+  "users": [
+    {"id":1,"email":"admin@gmail.com","password":"Admin@123","role":"Admin","name":"Rakesh Kumar"},
+    {"id":2,"email":"customer@gmail.com","password":"Cust@123","role":"Customer","name":"Aravind Gulimi"}
+  ]
+} 

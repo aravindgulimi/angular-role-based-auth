@@ -1,0 +1,246 @@
+.app-shell {
+    display: flex;
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background: #eaf9f6
+}
+
+.sidebar {
+    width: 220px;
+    background: #0f7a74;
+    color: #fff;
+    padding: 24px;
+    box-sizing: border-box
+}
+
+.brand {
+    font-weight: 800;
+    background: #19a085;
+    padding: 12px;
+    border-radius: 20px;
+    text-align: center
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 20px 0;
+    margin: 0
+}
+
+.sidebar nav li {
+    padding: 10px 12px;
+    border-radius: 6px;
+    margin-bottom: 8px
+}
+
+.sidebar nav li.active {
+    background: rgba(255, 255, 255, 0.06)
+}
+
+.topbar {
+    position: absolute;
+    left: 220px;
+    right: 0;
+    top: 0;
+    height: 72px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px
+}
+
+.page-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0a3b38
+}
+
+.top-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.top-actions .user {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #dff6f2;
+    color: #0a3b38;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700
+}
+
+.main {
+    margin-left: 220px;
+    padding: 100px 40px 40px
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 20px
+}
+
+/* layout helpers to place cards side-by-side */
+.basic-card {
+    grid-column: 1 / 2
+}
+
+.contact-card {
+    grid-column: 2 / 3
+}
+
+.address-card {
+    grid-column: 1 / 2
+}
+
+.payment-card {
+    grid-column: 2 / 3
+}
+
+/* allow some cards to span both columns when needed */
+.card.wide,
+.card.full {
+    grid-column: 1 / -1
+}
+
+.search-row {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: 12px;
+    margin-bottom: 8px
+}
+
+.search-row input {
+    flex: 1;
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ddd
+}
+
+.search-row button {
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    background: #d96443;
+    color: #fff
+}
+
+.card {
+    background: #fff;
+    border-radius: 6px;
+    padding: 18px;
+    box-shadow: 0 1px 0 rgba(10, 59, 56, 0.06)
+}
+
+.card.wide {
+    grid-column: 1/ -1;
+    display: block
+}
+
+.card.full {
+    grid-column: 1/ -1
+}
+
+.card.small {
+    grid-column: 2/3
+}
+
+.card h3 {
+    background: #0f7a74;
+    color: #fff;
+    padding: 8px 12px;
+    border-radius: 4px;
+    margin: -18px -18px 12px -18px
+}
+
+.two-col {
+    display: flex;
+    gap: 20px
+}
+
+.two-col>div {
+    flex: 1
+}
+
+label {
+    display: block;
+    margin-top: 8px;
+    font-size: 13px;
+    color: #505050
+}
+
+/* required star indicator */
+label .required {
+    color: #d32f2f;
+    margin-left: 6px;
+    font-weight: 700;
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: 1px solid #e0e0e0;
+    box-sizing: border-box
+}
+
+.radio-row {
+    display: flex;
+    gap: 12px;
+    margin-top: 8px
+}
+
+.address-grid {
+    display: flex;
+    gap: 20px
+}
+
+.inline-check {
+    margin-top: 12px
+}
+
+.checkbox-row {
+    display: flex;
+    gap: 20px;
+    margin-top: 12px
+}
+
+.action-row {
+    grid-column: 1/ -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 10px
+}
+
+.btn {
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    background: #f2f2f2
+}
+
+.btn.primary {
+    background: #d96443;
+    color: #fff;
+    border: none
+}
+
+@media(max-width:980px) {
+    .form-grid {
+        grid-template-columns: 1fr
+    }
+
+    .card.small {
+        grid-column: 1
+    }
+}

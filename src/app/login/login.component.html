@@ -1,0 +1,50 @@
+<!-- login.component.html -->
+<div class="login-shell">
+  <div class="hero">
+    <div class="hero-image"></div>
+    <div class="hero-overlay">
+      <img src="assets/gas-station.png" alt="Gas station" class="bg-image" />
+    </div>
+  </div>
+
+  <div class="login-card">
+    <div class="card-inner">
+      <div class="kicker">SECURE ACCESS</div>
+      <h1>Welcome to GAIL Gas Limited</h1>
+
+      <form [formGroup]="loginForm" (ngSubmit)="onLogin()">
+        <label>Email</label>
+        <input formControlName="email" placeholder="email@gmail.com" />
+
+        <div
+          *ngIf="
+            loginForm.get('email')?.invalid && loginForm.get('email')?.touched
+          "
+          style="color: red"
+        >
+          Valid Gmail is required
+        </div>
+
+        <label>Password</label>
+        <input
+          type="password"
+          formControlName="password"
+          placeholder="password"
+        />
+        <div
+          *ngIf="
+            loginForm.get('password')?.invalid &&
+            loginForm.get('password')?.touched
+          "
+          style="color: red"
+        >
+          Password is required
+        </div>
+
+        <div class="forgot"><a (click)="onForgot()">Forgot Password</a></div>
+
+        <button class="btn-login" type="submit">LOGIN</button>
+      </form>
+    </div>
+  </div>
+</div>

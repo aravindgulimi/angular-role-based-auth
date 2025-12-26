@@ -1,0 +1,172 @@
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand">GAIL GAS</div>
+    <nav>
+      <ul>
+        <li class="active">Dashboard</li>
+        <li>Customer on Boarding</li>
+        <li>Billing & Payment</li>
+        <li>CRM</li>
+      </ul>
+    </nav>
+  </aside>
+
+  <header class="topbar">
+    <div class="page-title">Customer Registration</div>
+    <div class="top-actions">
+      <div class="user">R</div>
+      <div class="user-name">Rakesh Kumar</div>
+      <button class="btn logout" (click)="logout()">Logout</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <form [formGroup]="customerForm" (ngSubmit)="onSave()" class="form-grid">
+
+      <div class="search-row">
+        <input placeholder="Enter BP Number" formControlName="bpNumber" />
+        <button type="button" (click)="onSearch()">Search</button>
+      </div>
+
+      <section class="card basic-card">
+        <h3>Basic Information</h3>
+        <div class="two-col">
+          <div>
+            <label>Customer Type <span class="required">*</span></label>
+            
+            <select formControlName="customerType">
+              <option value="">Select Customer type</option>
+              <option *ngFor="let t of customerTypes" [value]="t">{{t}}</option>
+            </select>
+
+            <label>Full Name <span class="required">*</span></label>
+            <input formControlName="fullName" placeholder="Enter Full Name" />
+
+            <label>Application Date <span class="required">*</span></label>
+            <input type="date" formControlName="applicationDate" />
+          </div>
+
+          <div>
+            <label>Father's/Mother's/Husband's/Middle Name</label>
+            <input formControlName="middleName" placeholder="Enter Middle Name" />
+
+            <label>Type of Ownership</label>
+            <div class="radio-row">
+              <label><input type="radio" formControlName="ownership" value="Owner" /> Owner <span class="required">*</span></label>
+              <label><input type="radio" formControlName="ownership" value="Rented" /> Rented <span class="required">*</span></label>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card contact-card">
+        <h3>Contact Details</h3>
+        <label>Mobile Number <span class="required">*</span></label>
+        <input formControlName="mobile" placeholder="0000000000" />
+
+        <div
+          *ngIf="customerForm.get('mobile')?.hasError('validPhoneNumber')"
+          style="color: red;"
+        >
+          <small>
+            {{customerForm.controls['mobile']['errors']?.['validPhoneNumber']}}
+          </small>
+        </div>
+
+        <label>Alternate Mobile Number</label>
+        <input formControlName="altMobile" />
+
+        <label>Email </label>
+        <input formControlName="email" placeholder="name@gmail.com" />
+        <!-- <div
+          *ngIf="customerForm.get('email')?.hasError('invalidDomain') && !customerForm.get('email')?.touched"
+          style="color: red;"
+        >
+          <small>
+            {{customerForm.controls['email']['errors']?.['invalidDomain']}}
+          </small>
+        </div> -->
+
+        <label>Landline Number</label>
+        <input formControlName="landline" />
+      </section>
+
+      <section class="card address-card">
+        <h3>Address Details</h3>
+        <div class="address-grid">
+          <div>
+            <label>Type of House <span class="required">*</span></label>
+            <select formControlName="houseType">
+              <option value="">Select type of House</option>
+              <option *ngFor="let h of houseTypes" [value]="h">{{h}}</option>
+            </select>
+
+            <label>Floor</label>
+            <select formControlName="floor">
+              <option value="">Select Floor</option>
+              <option *ngFor="let f of floors" [value]="f">{{f}}</option>
+            </select>
+
+            <label>Street/Area Name <span class="required">*</span></label>
+            <input formControlName="street" placeholder="Street/Area Name" />
+
+            <label>Area <span class="required">*</span></label>
+            <select formControlName="area">
+              <option value="">Select Area</option>
+              <option *ngFor="let a of areas" [value]="a">{{a}}</option>
+            </select>
+
+            <label>State <span class="required">*</span></label>
+            <input formControlName="state" placeholder="State" />
+          </div>
+
+          <div>
+            <label>House/Flat No <span class="required">*</span></label>
+            <input formControlName="flatNo" />
+
+            <label>Society/Apartment <span class="required">*</span></label>
+            <input formControlName="society" />
+
+            <label>Landmark <span class="required">*</span></label>
+            <input formControlName="landmark" />
+
+            <label>City <span class="required">*</span></label>
+            <select formControlName="city">
+              <option value="">Select City</option>
+              <option *ngFor="let c of cities" [value]="c">{{c}}</option>
+            </select>
+
+            <label>PIN Code <span class="required">*</span></label>
+            <input formControlName="pin" placeholder="000000" />
+          </div>
+        </div>
+      </section>
+
+      <section class="card small payment-card">
+        <h3>Payment Plan</h3>
+        <label>Payment Plan <span class="required">*</span></label>
+        <select formControlName="paymentPlan">
+          <option value="">Select Payment Plan</option>
+          <option *ngFor="let p of paymentPlans" [value]="p">{{p}}</option>
+        </select>
+
+        <div class="inline-check">
+          <label>Do you have LPG Connection?</label>
+          <label><input type="radio" formControlName="hasLpg" value="Yes" /> Yes </label>
+          <label><input type="radio" formControlName="hasLpg" value="No" /> No </label>
+        </div>
+
+        <div class="checkbox-row">
+          <label><input type="checkbox" formControlName="isBulk" /> Is Bulk </label>
+          <label><input type="checkbox" formControlName="urgent" /> Urgent Verification </label>
+        </div>
+      </section>
+
+      <div class="action-row">
+        <button type="submit" class="btn primary">Save</button>
+        <button type="button" class="btn" (click)="onClear()">Clear</button>
+      </div>
+
+    </form>
+  </main>
+</div>
